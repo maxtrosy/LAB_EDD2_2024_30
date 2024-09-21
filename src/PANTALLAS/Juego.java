@@ -32,7 +32,13 @@ public class Juego extends javax.swing.JFrame {
 
     static Nodo raiz;
 
+    static int Altura = 9;
+
     private Map<Integer, String[]> datasetImagenes;
+
+    Arbolinho arbol = new Arbolinho();
+
+    static Arbolinho raizArbolihno;
 
     /**
      * Creates new form Juego
@@ -42,7 +48,7 @@ public class Juego extends javax.swing.JFrame {
         
        BtnIzquierda.setIcon(new ImageIcon("src\\Resources\\ImagenesJuegoflecha_der.png"));
         jLabel1.revalidate();
-            jLabel1.repaint();
+        jLabel1.repaint();
         setLocationRelativeTo(null);
         setLocationRelativeTo(null);
         transparenciaButton();
@@ -58,7 +64,6 @@ public class Juego extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Arbolinho arbol = new Arbolinho();
         arbol.crearArbol();
         nodoActual = arbol.raiz;
         raiz = arbol.raiz;
@@ -67,6 +72,7 @@ public class Juego extends javax.swing.JFrame {
         actualizarImagenFondo();
 
         plantilla.setText(Integer.toString(nodoActual.nombre));
+        jLabel2.setText(Integer.toString(1) + ", Raíz");
 
         TxtAcertijo.setVisible(false);
         BtnOpcion1.setVisible(false);
@@ -101,9 +107,9 @@ public class Juego extends javax.swing.JFrame {
             if (BtnAcertijo.isVisible()) {
                 jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen1));
             } else if (TxtAcertijo.isVisible()) {
-                 jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen2));
+                jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen2));
             } else if (BtnIzquierda.isVisible() && BtnDerecha.isVisible()) {
-                 jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen3));
+                jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen3));
             }
 
             jLabel1.revalidate();
@@ -134,17 +140,25 @@ public class Juego extends javax.swing.JFrame {
         BtnIzquierda = new javax.swing.JButton();
         BtnOpcion3 = new javax.swing.JButton();
         BtnDerecha = new javax.swing.JButton();
+<<<<<<< HEAD
         BtnOpcion1 = new javax.swing.JButton();
         Fb3 = new javax.swing.JLabel();
         Fb2 = new javax.swing.JLabel();
         Fb1 = new javax.swing.JLabel();
+=======
+        jLabel2 = new javax.swing.JLabel();
+        plantilla = new javax.swing.JLabel();
+>>>>>>> e222b61d3196db494d12458dc0ead34d13965656
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 800));
         setMinimumSize(new java.awt.Dimension(1280, 800));
         setUndecorated(true);
+<<<<<<< HEAD
         setResizable(false);
+=======
+>>>>>>> e222b61d3196db494d12458dc0ead34d13965656
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BtnOpcion2.setBackground(new java.awt.Color(231, 217, 182));
@@ -217,6 +231,7 @@ public class Juego extends javax.swing.JFrame {
         });
         getContentPane().add(BtnDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 620, 150, 60));
 
+<<<<<<< HEAD
         BtnOpcion1.setBackground(new java.awt.Color(231, 217, 182));
         BtnOpcion1.setText("Jb1");
         BtnOpcion1.setToolTipText("");
@@ -245,6 +260,15 @@ public class Juego extends javax.swing.JFrame {
         Fb1.setText("jLabel2");
         getContentPane().add(Fb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 360, 150));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 800));
+=======
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 730, 320, -1));
+
+        plantilla.setText("jLabel2");
+        getContentPane().add(plantilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1230, 800));
+>>>>>>> e222b61d3196db494d12458dc0ead34d13965656
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -317,12 +341,17 @@ public class Juego extends javax.swing.JFrame {
     private void BtnIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIzquierdaActionPerformed
        System.out.println("funciona pofa");
         avanceHistoria(nodoActual, BtnIzquierda.getText());
-
+        jLabel2.setText(Integer.toString(Altura - nodoActual.alturaArbol(nodoActual)) + ", " + BtnIzquierda.getText());
+        arbol.guardarAventura(BtnIzquierda.getText(), nodoActual);
+        System.out.println(arbol.recorrido);
     }//GEN-LAST:event_BtnIzquierdaActionPerformed
 
     private void BtnDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDerechaActionPerformed
         System.out.println("funciona pofa");
         avanceHistoria(nodoActual, BtnDerecha.getText());
+        jLabel2.setText(Integer.toString(Altura - nodoActual.alturaArbol(nodoActual)) + ", " + BtnDerecha.getText());
+        arbol.guardarAventura(BtnDerecha.getText(), nodoActual);
+        System.out.println(arbol.recorrido);
     }//GEN-LAST:event_BtnDerechaActionPerformed
 
     private void BtnOpcion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOpcion1ActionPerformed
@@ -341,7 +370,7 @@ public class Juego extends javax.swing.JFrame {
         if (direccion.toLowerCase().equals("izquierda")) {
             if (nodoActual.izq == null && nodoActual.der == null) {
 
-                verificarNodoLlegada(nodoActual);
+                verificarNodoLlegada(nodoActual, BtnIzquierda.getText());
             } else {
                 nodoActual = nodoActual.izq;
                 plantilla.setText(Integer.toString(nodoActual.nombre));
@@ -350,13 +379,13 @@ public class Juego extends javax.swing.JFrame {
                 BtnAcertijo.setVisible(true);
                 actualizarImagenFondo();
                 if (esHoja(nodoActual)) {
-                    verificarNodoLlegada(nodoActual);
+                    verificarNodoLlegada(nodoActual, BtnIzquierda.getText());
                 }
             }
         } else if (direccion.toLowerCase().equals("derecha")) {
             if (nodoActual.izq == null && nodoActual.der == null) {
 
-                verificarNodoLlegada(nodoActual);
+                verificarNodoLlegada(nodoActual, BtnDerecha.getText());
             } else {
                 nodoActual = nodoActual.der;
                 plantilla.setText(Integer.toString(nodoActual.nombre));
@@ -365,30 +394,32 @@ public class Juego extends javax.swing.JFrame {
                 BtnAcertijo.setVisible(true);
                 actualizarImagenFondo();
                 if (esHoja(nodoActual)) {
-                    verificarNodoLlegada(nodoActual);
+                    verificarNodoLlegada(nodoActual, BtnDerecha.getText());
                 }
             }
         }
-        
+
     }
 
-    private boolean esHoja(Nodo nodo) {
+    public static boolean esHoja(Nodo nodo) {
         return nodo.izq == null && nodo.der == null;
-        
+
     }
 
-    private void verificarNodoLlegada(Nodo nodo) {
+    private void verificarNodoLlegada(Nodo nodo, String direccion) {
         if (nodo.llegada) {
 
-            
         } else {
-            JOptionPane.showMessageDialog(null, "¡Te moriste! Regresando al nodo anterior...");
+
             nodoActual = encontrarPadre(raiz, nodo);
+            jLabel2.setText(Integer.toString((Altura - nodoActual.alturaArbol(nodoActual)) + 1) + ", " + direccion);
             actualizarImagenFondo();
             plantilla.setText(Integer.toString(nodoActual.nombre));
             BtnIzquierda.setVisible(false);
             BtnDerecha.setVisible(false);
             BtnAcertijo.setVisible(true);
+            arbol.imprimirArbol();
+            JOptionPane.showMessageDialog(null, "¡Te moriste! Regresando al nodo anterior...");
         }
     }
 
@@ -406,7 +437,6 @@ public class Juego extends javax.swing.JFrame {
             return left;
         }
 
-        
         return encontrarPadre(raiz.der, nodo);
     }
 
@@ -457,6 +487,7 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel Fb3;
     private javax.swing.JLabel TxtAcertijo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel plantilla;
     // End of variables declaration//GEN-END:variables
 }
