@@ -156,7 +156,8 @@ public class Juego extends javax.swing.JFrame {
 
         TxtAcertijo.setText("jLabel2");
         TxtAcertijo.setToolTipText("");
-        getContentPane().add(TxtAcertijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 1150, 70));
+        TxtAcertijo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(TxtAcertijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 1150, 70));
 
         BtnOpcion1.setText("jButton1");
         BtnOpcion1.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +280,7 @@ public class Juego extends javax.swing.JFrame {
         avanceHistoria(nodoActual, BtnIzquierda.getText());
         jLabel2.setText(Integer.toString(Altura - nodoActual.alturaArbol(nodoActual)) + ", " + BtnIzquierda.getText());
         arbol.guardarAventura(BtnIzquierda.getText(), nodoActual);
-        System.out.println(arbol.recorrido);
+        System.out.println(arbol.recorrido.get(0).get(0));
     }//GEN-LAST:event_BtnIzquierdaActionPerformed
 
     private void BtnDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDerechaActionPerformed
@@ -287,7 +288,7 @@ public class Juego extends javax.swing.JFrame {
         avanceHistoria(nodoActual, BtnDerecha.getText());
         jLabel2.setText(Integer.toString(Altura - nodoActual.alturaArbol(nodoActual)) + ", " + BtnDerecha.getText());
         arbol.guardarAventura(BtnDerecha.getText(), nodoActual);
-        System.out.println(arbol.recorrido);
+        System.out.println(arbol.recorrido.get(0).get(0));
     }//GEN-LAST:event_BtnDerechaActionPerformed
 
     private void BtnOpcion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOpcion1ActionPerformed
