@@ -1,0 +1,41 @@
+Número;Acertijo;Opción 1;Opción 2;Opción 3;Respuesta
+1;¿Por qué plantar árboles?;Producen oxígeno;Generan basura;Producen petróleo;Producen oxígeno
+2;¿Qué es reciclar?;Quemar materiales;Reusar materiales;Destruir materiales;Reusar materiales
+3;¿Por qué ahorrar agua?;Es infinita;Es limitada;Es gratuita;Es limitada
+4;¿Qué es energía solar?;Energía de la luna;Energía del viento;Energía del sol;Energía del sol
+5;¿Cómo cuidar el planeta?;Consumir más recursos;Reciclar y ahorrar;No hacer nada;Reciclar y ahorrar
+6;¿Qué es contaminación?;Limpiar el ambiente;Ensuciar el ambiente;Mejorar el aire;Ensuciar el ambiente
+7;¿Qué es cambio climático?;Calor natural;Cambio del clima;Cambio de las estaciones;Cambio del clima
+8;¿Cómo reducir el plástico?;Quemarlo;Usar menos;Usar más;Usar menos
+9;¿Qué es compostaje?;Abono natural;Residuo tóxico;Basura contaminante;Abono natural
+10;¿Por qué cuidar los bosques?;Contaminan el agua;Producen basura;Limpian el aire;Limpian el aire
+11;¿Qué es biodiversidad?;Variedad de vida;Un tipo de planta;Contaminación biológica;Variedad de vida
+12;¿Qué es energía eólica?;Energía del viento;Energía del sol;Energía de las olas;Energía del viento
+13;¿Por qué evitar la basura?;Contamina;Es valiosa;Atrae animales;Contamina
+14;¿Qué es un ecosistema?;Planeta Tierra;Comunidad de seres vivos;Aire limpio;Comunidad de seres vivos
+15;¿Por qué usar menos autos?;Reducen contaminación;Generan oxígeno;Aumentan la biodiversidad;Reducen contaminación
+16;¿Qué es un recurso natural?;Algo de la naturaleza;Algo hecho por humanos;Un invento moderno;Algo de la naturaleza
+17;¿Por qué proteger los océanos?;Dan vida;Son fuentes de basura;Absorben el sol;Dan vida
+18;¿Qué es un hábitat?;Hogar natural de animales;Ciudad para humanos;Construcción artificial;Hogar natural de animales
+19;¿Qué es una especie en peligro?;Animal peligroso;Especie nueva;A punto de extinguirse;A punto de extinguirse
+20;¿Cómo ahorrar energía?;Apagar luces;Dejar las luces encendidas;Usar más dispositivos;Apagar luces
+21;¿Qué es energía renovable?;Energía artificial;Energía que no se acaba;Energía que se agota;Energía que no se acaba
+22;¿Por qué usar bicicleta?;No contamina;Es más lenta;Consume gasolina;No contamina
+23;¿Qué es deforestación?;Cortar árboles;Plantar más bosques;Cuidar los árboles;Cortar árboles
+24;¿Qué es una planta nativa?;Originaria de un lugar;Planta artificial;Originaria de otro país;Originaria de un lugar
+25;¿Cómo evitar la erosión?;Plantar árboles;Tirar basura;Eliminar plantas;Plantar árboles
+26;¿Qué es un vertedero?;Lugar para basura;Lugar para animales;Lugar para plantar árboles;Lugar para basura
+27;¿Qué es contaminación del aire?;Aire limpio;Aire sucio;Aire saludable;Aire sucio
+28;¿Qué es contaminación del agua?;Agua limpia;Agua sucia;Agua pura;Agua sucia
+29;¿Qué es contaminación del suelo?;Tierra limpia;Tierra fértil;Tierra contaminada;Tierra contaminada
+30;¿Por qué proteger los animales?;Mantienen el equilibrio;Aumentan la contaminación;Generan basura;Mantienen el equilibrio
+31;¿Qué es agricultura sostenible?;Agricultura intensiva;Agricultura sin dañar la tierra;Agricultura contaminante;Agricultura sin dañar la tierra
+32;¿Qué es energía geotérmica?;Energía del calor de la Tierra;Energía del viento;Energía del agua;Energía del calor de la Tierra
+33;¿Por qué evitar desperdicios?;Afecta el ambiente;Es una moda;Es costoso;Afecta el ambiente
+34;¿Qué es la capa de ozono?;Parte de la atmósfera;Protege de los rayos del sol;Emite gases;Protege de los rayos del sol
+35;¿Qué es el efecto invernadero?;Generación de ozono;Calentamiento de la Tierra;Enfriamiento de la Tierra;Calentamiento de la Tierra
+36;¿Cómo reducir la huella de carbono?;Usar menos energía;Usar más energía;Comprar más cosas;Usar menos energía
+37;¿Qué es reciclaje de papel?;Tirar papel;Reusar papel;Quemar papel;Reusar papel
+38;¿Por qué limpiar los ríos?;Absorben el CO2;Generan energía;Mantienen la vida;Mantienen la vida
+39;¿Qué es energía hidroeléctrica?;Energía del viento;Energía del agua;Energía del sol;Energía del agua
+40;¿Por qué usar energía limpia?;Es más rápida;No contamina;Es más cara;No contamina

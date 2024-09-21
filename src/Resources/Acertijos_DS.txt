@@ -1,0 +1,40 @@
+1;Soy invisible, pero sin mí, no podrías respirar. Si me ensucias, enfermas. ¿Quién soy?;Aire;Agua;Tierra;Aire
+2;Caigo del cielo, limpio la tierra, pero a veces me ensucian con humo y químicos. ¿Quién soy?;Lluvia;Nieve;Hielo;Lluvia
+3;Brillo y caliento el planeta, pero si hay mucho de mí, puedo quemar. ¿Quién soy?;Sol;Estrella;Luna;Sol
+4;Estoy en los océanos y ríos, soy esencial para la vida, pero si me contaminas, me vuelvo peligrosa. ¿Quién soy?;Agua;Jugo;Aceite;Agua
+5;Me generan los autos y fábricas, y ensucio el aire. ¿Qué soy?;Humo;Vapor;Niebla;Humo
+6;Me producen los humanos, soy basura que no desaparece por mucho tiempo. ¿Quién soy?;Plástico;Cartón;Vidrio;Plástico
+7;Doy sombra y oxígeno, pero cuando me talan, el aire se vuelve sucio. ¿Quién soy?;Árbol;Planta;Flor;Árbol
+8;Soy pequeño, se me puede reciclar, pero si me tiran al suelo, contamino por cientos de años. ¿Quién soy?;Botella de plástico;Taza;Bolsa;Botella de plástico
+9;Soy el hogar de miles de especies, pero si me cortan, muchas pueden desaparecer. ¿Quién soy?;Selva;Desierto;Pradera;Selva
+10;Soy negra y pegajosa, contamino océanos cuando los barcos me derraman. ¿Qué soy?;Petróleo;Agua;Savia;Petróleo
+11;Puedo reciclarme, me usas para beber, pero a veces me tiran al mar. ¿Qué soy?;Lata;Botella;Copa;Lata
+12;Estoy hecha de árboles y se usa para escribir, pero debo reciclarme para salvar bosques. ¿Qué soy?;Papel;Cartón;Tela;Papel
+13;Estoy debajo de la tierra, me extraen para producir energía, pero contamino mucho. ¿Qué soy?;Carbón;Gas;Aceite;Carbón
+14;Vivo en el mar y cuando hay plástico en el agua, puedo enfermar o morir. ¿Quién soy?;Pez;Tortuga;Coral;Pez
+15;Floto en el aire y, si hay mucha contaminación, no dejo pasar la luz del sol. ¿Quién soy?;Nube de smog;Nube;Vapor;Nube de smog
+16;Soy una bola de gas, me subo al cielo desde fábricas y autos, y hago el planeta más caliente. ¿Quién soy?;Dióxido de carbono;Oxígeno;Nitrógeno;Dióxido de carbono
+17;Ayudo a dar energía limpia con el viento, no contamina el aire. ¿Quién soy?;Molino eólico;Turbina;Panel solar;Molino eólico
+18;Cubro el suelo y lo protejo, pero cuando me quitan, el viento y el agua se llevan la tierra. ¿Quién soy?;Vegetación;Hierba;Tierra;Vegetación
+19;Doy energía al calentarme, pero no contamino ni el aire ni el agua. ¿Quién soy?;Energía solar;Energía eólica;Carbón;Energía solar
+20;Vivo en los océanos, pero si tiras basura al agua, me destruyes. ¿Quién soy?;Coral;Pez;Ostra;Coral
+21;Soy un agujero en la atmósfera causado por la contaminación, y dejo entrar más rayos dañinos del sol. ¿Qué soy?;Agujero de ozono;Nube;Humo;Agujero de ozono
+22;Estoy en las playas y parques, si me tiras al suelo, daño la naturaleza. ¿Qué soy?;Basura;Plástico;Desecho;Basura
+23;Ayudo a reducir el desperdicio, al usarse nuevamente productos viejos. ¿Qué soy?;Reciclaje;Reutilización;Desperdicio;Reciclaje
+24;Soy el humo negro que sale de las fábricas y autos, y ensucio el cielo. ¿Qué soy?;Contaminación;Humo;Niebla;Contaminación
+25;Puedes reducirme reutilizando y reciclando, y así ayudarás al planeta. ¿Qué soy?;Basura;Desecho;Residuos;Basura
+26;Me hago más grande cuando queman combustibles fósiles y atrapo calor en la Tierra. ¿Qué soy?;Efecto invernadero;Calentamiento global;Contaminación;Efecto invernadero
+27;Ayudo a mover autos sin contaminar el aire porque no uso gasolina. ¿Qué soy?;Auto eléctrico;Bicicleta;Tren;Auto eléctrico
+28;Puedo ser clara y limpia o estar llena de desechos y plástico. ¿Qué soy?;Agua de mar;Agua dulce;Lluvia;Agua de mar
+29;Estoy hecho de desechos orgánicos y puedo convertirme en abono natural para las plantas. ¿Qué soy?;Compost;Fertilizante;Tierra;Compost
+30;Soy el ruido fuerte de las ciudades, que molesta y afecta la salud de las personas. ¿Qué soy?;Contaminación sonora;Ruidos;Tráfico;Contaminación sonora
+31;Estoy hecha de gases tóxicos y partículas, y cuando hay mucho de mí, es difícil respirar. ¿Qué soy?;Nube de smog;Humo;Niebla;Nube de smog
+32;Soy un residuo electrónico y, si no me reciclan, contamino la tierra y el agua. ¿Qué soy?;Basura electrónica;Plástico;Residuos;Basura electrónica
+33;Me usan las plantas para crecer, pero los humanos a veces me contaminan con químicos. ¿Quién soy?;Suelo;Agua;Aire;Suelo
+34;Caigo del cielo, pero cuando me mezclo con gases tóxicos, puedo dañar bosques y lagos. ¿Qué soy?;Lluvia ácida;Lluvia;Nieve;Lluvia ácida
+35;Puedo convertir la basura en energía, pero no todas las ciudades me tienen. ¿Qué soy?;Planta de reciclaje;Fábrica;Biomasa;Planta de reciclaje
+36;Puedo ser peligroso para los animales cuando se enredan en mí en el océano. ¿Qué soy?;Bolsa de plástico;Red;Cuerda;Bolsa de plástico
+37;Soy un gas que sale de los autos y fábricas, y daño el aire que respiras. ¿Qué soy?;Monóxido de carbono;Dióxido;Gas;Monóxido de carbono
+38;Me reciclan para hacer más papel y ayudar a no cortar tantos árboles. ¿Qué soy?;Cartón;Papel;Madera;Cartón
+39;Soy el lugar donde termina la basura, pero crezco mucho y contamina la tierra. ¿Qué soy?;Vertedero;Basura;Planta;Vertedero
+40;Cubro el planeta con una capa de gases, pero si me ensucias, el clima cambia. ¿Qué soy?;Atmósfera;Cielo;Mar;Atmósfera
