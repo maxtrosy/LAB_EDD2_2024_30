@@ -4,6 +4,7 @@
  */
 package PANTALLAS;
 
+import static PANTALLAS.Pantalla1_JUGAR.frameinstruc;
 import java.awt.Font;
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,7 +18,10 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import lab_edd2.Arbolinho;
-
+import javax.swing.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static lab_edd2.Arbolinho.guardarAventura;
 import lab_edd2.Nodo;
 
 /**
@@ -25,6 +29,8 @@ import lab_edd2.Nodo;
  * @author maxtr
  */
 public class Juego extends javax.swing.JFrame {
+
+    private List<Nodo> nodosRecorridos = new ArrayList<>();
 
     private String respuestaCorrecta;
 
@@ -45,9 +51,10 @@ public class Juego extends javax.swing.JFrame {
      */
     public Juego() {
         initComponents();
+
         jLabel1.revalidate();
         jLabel1.repaint();
-        setLocationRelativeTo(null);
+
         setLocationRelativeTo(null);
         transparenciaButton();
         try {
@@ -78,6 +85,7 @@ public class Juego extends javax.swing.JFrame {
         BtnOpcion3.setVisible(false);
         BtnIzquierda.setVisible(false);
         BtnDerecha.setVisible(false);
+        BtnFin.setVisible(false);
     }
 
     private void cargarDatasetImagenes() {
@@ -119,6 +127,166 @@ public class Juego extends javax.swing.JFrame {
         BtnAcertijo.setContentAreaFilled(false);
         BtnAcertijo.setBorderPainted(false);
 
+        BtnFin.setOpaque(false);
+        BtnFin.setContentAreaFilled(false);
+        BtnFin.setBorderPainted(false);
+    }
+    private void verificarRespuesta(String respuestaSeleccionada) {
+        if (respuestaSeleccionada.equals(respuestaCorrecta)) {
+            JOptionPane.showMessageDialog(this, "¡Correcto!");
+
+            BtnIzquierda.setVisible(true);
+            BtnDerecha.setVisible(true);
+
+            TxtAcertijo.setVisible(false);
+            BtnOpcion1.setVisible(false);
+            BtnOpcion2.setVisible(false);
+            BtnOpcion3.setVisible(false);
+            BtnAcertijo.setVisible(false);
+
+            actualizarImagenFondo();
+        } else {
+            JOptionPane.showMessageDialog(this, "Incorrecto, intenta con otro acertijo.");
+
+            BtnIzquierda.setVisible(false);
+            BtnDerecha.setVisible(false);
+
+            BtnAcertijoActionPerformed(null);
+        }
+    }
+
+    private void mostrarSecuenciaImagenes() {
+        if (nodosRecorridos.isEmpty()) {
+            return;
+        }
+
+        Timer timer = new Timer(500, new ActionListener() { // Cambiar cada 500 ms
+            int index = 0;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (index < nodosRecorridos.size()) {
+                    Nodo nodo = nodosRecorridos.get(index);
+                    String[] infoNodo = datasetImagenes.get(nodo.nombre);
+                    if (infoNodo != null) {
+                        String imagen = infoNodo[1]; // Asumiendo que la imagen deseada es la primera
+                        jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen));
+                        jLabel1.revalidate();
+                        jLabel1.repaint();
+                    }
+                    index++;
+                } else {
+                    ((Timer) e.getSource()).stop(); // Detener el temporizador cuando termine
+                }
+            }
+        });
+
+        timer.start();
+    }
+     public void avanceHistoria(Nodo nodo, String direccion) {
+        if (direccion.toLowerCase().equals("izquierda")) {
+            if (nodoActual.izq == null && nodoActual.der == null) {
+
+                verificarNodoLlegada(nodoActual, BtnIzquierda.getText());
+            } else {
+                nodoActual = nodoActual.izq;
+                guardarAventura(direccion, nodoActual);
+                plantilla.setText(Integer.toString(nodoActual.nombre));
+                BtnIzquierda.setVisible(false);
+                BtnDerecha.setVisible(false);
+                BtnAcertijo.setVisible(true);
+                actualizarImagenFondo();
+                if (esHoja(nodoActual)) {
+                    verificarNodoLlegada(nodoActual, BtnIzquierda.getText());
+                }
+            }
+        } else if (direccion.toLowerCase().equals("derecha")) {
+            if (nodoActual.izq == null && nodoActual.der == null) {
+
+                verificarNodoLlegada(nodoActual, BtnDerecha.getText());
+            } else {
+                nodoActual = nodoActual.der;
+                plantilla.setText(Integer.toString(nodoActual.nombre));
+                BtnIzquierda.setVisible(false);
+                BtnDerecha.setVisible(false);
+                BtnAcertijo.setVisible(true);
+                actualizarImagenFondo();
+                if (esHoja(nodoActual)) {
+                    verificarNodoLlegada(nodoActual, BtnDerecha.getText());
+                }
+            }
+        }
+
+    }
+
+    private void mostrarRecorrido() {
+
+        Timer timer = new Timer(1000, new ActionListener() {
+            int index = 0;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (index < nodosRecorridos.size()) {
+                    Nodo nodo = nodosRecorridos.get(index);
+                    String[] infoNodo = datasetImagenes.get(nodo.nombre);
+                    if (infoNodo != null) {
+                        String imagen1 = infoNodo[1];
+                        jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen1));
+                        jLabel1.revalidate();
+                        jLabel1.repaint();
+                    }
+                    index++;
+                } else {
+                    ((Timer) e.getSource()).stop();
+                }
+            }
+        });
+
+        timer.start();
+    }
+
+    public static boolean esHoja(Nodo nodo) {
+        return nodo.izq == null && nodo.der == null;
+
+    }
+
+    private void verificarNodoLlegada(Nodo nodo, String direccion) {
+
+        if (nodo.nombre == 207) {
+            jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\53.png"));
+            BtnFin.setVisible(true);
+        } else {
+
+            nodoActual = encontrarPadre(raiz, nodo);
+            jLabel2.setText(Integer.toString((Altura - nodoActual.alturaArbol(nodoActual)) + 1) + ", " + direccion);
+            actualizarImagenFondo();
+            plantilla.setText(Integer.toString(nodoActual.nombre));
+            BtnIzquierda.setVisible(false);
+            BtnDerecha.setVisible(false);
+            BtnAcertijo.setVisible(true);
+
+            arbol.imprimirArbolVertical(raiz, 0);
+            JOptionPane.showMessageDialog(null, "¡Te moriste! Regresando al nodo anterior...");
+            mostrarRecorrido();
+
+        }
+    }
+
+    private Nodo encontrarPadre(Nodo raiz, Nodo nodo) {
+        if (raiz == null || nodo == null) {
+            return null;
+        }
+
+        if (raiz.izq == nodo || raiz.der == nodo) {
+            return raiz;
+        }
+
+        Nodo left = encontrarPadre(raiz.izq, nodo);
+        if (left != null) {
+            return left;
+        }
+
+        return encontrarPadre(raiz.der, nodo);
     }
 
     /**
@@ -130,6 +298,7 @@ public class Juego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BtnFin = new javax.swing.JButton();
         BtnAcertijo = new javax.swing.JButton();
         TxtAcertijo = new javax.swing.JLabel();
         BtnOpcion1 = new javax.swing.JButton();
@@ -145,6 +314,13 @@ public class Juego extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1280, 800));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BtnFin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnFinActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1115, 723, 140, 50));
 
         BtnAcertijo.setBackground(new java.awt.Color(242, 242, 242));
         BtnAcertijo.addActionListener(new java.awt.event.ActionListener() {
@@ -250,36 +426,18 @@ public class Juego extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_BtnAcertijoActionPerformed
-    private void verificarRespuesta(String respuestaSeleccionada) {
-        if (respuestaSeleccionada.equals(respuestaCorrecta)) {
-            JOptionPane.showMessageDialog(this, "¡Correcto!");
-
-            BtnIzquierda.setVisible(true);
-            BtnDerecha.setVisible(true);
-
-            TxtAcertijo.setVisible(false);
-            BtnOpcion1.setVisible(false);
-            BtnOpcion2.setVisible(false);
-            BtnOpcion3.setVisible(false);
-            BtnAcertijo.setVisible(false);
-
-            actualizarImagenFondo();
-        } else {
-            JOptionPane.showMessageDialog(this, "Incorrecto, intenta con otro acertijo.");
-
-            BtnIzquierda.setVisible(false);
-            BtnDerecha.setVisible(false);
-
-            BtnAcertijoActionPerformed(null);
-        }
-    }
 
     private void BtnIzquierdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIzquierdaActionPerformed
         // TODO add your handling code here:
         avanceHistoria(nodoActual, BtnIzquierda.getText());
         jLabel2.setText(Integer.toString(Altura - nodoActual.alturaArbol(nodoActual)) + ", " + BtnIzquierda.getText());
         arbol.guardarAventura(BtnIzquierda.getText(), nodoActual);
+        nodosRecorridos.add(nodoActual);
         System.out.println(arbol.recorrido);
+        if (esHoja(nodoActual) && nodoActual.nombre != 207) {
+            mostrarSecuenciaImagenes();
+        }
+
     }//GEN-LAST:event_BtnIzquierdaActionPerformed
 
     private void BtnDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDerechaActionPerformed
@@ -287,9 +445,18 @@ public class Juego extends javax.swing.JFrame {
         avanceHistoria(nodoActual, BtnDerecha.getText());
         jLabel2.setText(Integer.toString(Altura - nodoActual.alturaArbol(nodoActual)) + ", " + BtnDerecha.getText());
         arbol.guardarAventura(BtnDerecha.getText(), nodoActual);
+
+        nodosRecorridos.add(nodoActual);
+
         System.out.println(arbol.recorrido);
+
+        if (esHoja(nodoActual) && nodoActual.nombre != 207) {
+            mostrarSecuenciaImagenes();
+        }
     }//GEN-LAST:event_BtnDerechaActionPerformed
 
+    
+    
     private void BtnOpcion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOpcion1ActionPerformed
         verificarRespuesta(BtnOpcion1.getText());
     }//GEN-LAST:event_BtnOpcion1ActionPerformed
@@ -302,79 +469,13 @@ public class Juego extends javax.swing.JFrame {
         verificarRespuesta(BtnOpcion3.getText());
     }//GEN-LAST:event_BtnOpcion3ActionPerformed
 
-    public void avanceHistoria(Nodo nodo, String direccion) {
-        if (direccion.toLowerCase().equals("izquierda")) {
-            if (nodoActual.izq == null && nodoActual.der == null) {
+    private void BtnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFinActionPerformed
+        this.setVisible(false);
+        Pantalla_Final frameinstruc = new Pantalla_Final();
+        frameinstruc.setVisible(true);
+    }//GEN-LAST:event_BtnFinActionPerformed
 
-                verificarNodoLlegada(nodoActual, BtnIzquierda.getText());
-            } else {
-                nodoActual = nodoActual.izq;
-                plantilla.setText(Integer.toString(nodoActual.nombre));
-                BtnIzquierda.setVisible(false);
-                BtnDerecha.setVisible(false);
-                BtnAcertijo.setVisible(true);
-                actualizarImagenFondo();
-                if (esHoja(nodoActual)) {
-                    verificarNodoLlegada(nodoActual, BtnIzquierda.getText());
-                }
-            }
-        } else if (direccion.toLowerCase().equals("derecha")) {
-            if (nodoActual.izq == null && nodoActual.der == null) {
-
-                verificarNodoLlegada(nodoActual, BtnDerecha.getText());
-            } else {
-                nodoActual = nodoActual.der;
-                plantilla.setText(Integer.toString(nodoActual.nombre));
-                BtnIzquierda.setVisible(false);
-                BtnDerecha.setVisible(false);
-                BtnAcertijo.setVisible(true);
-                actualizarImagenFondo();
-                if (esHoja(nodoActual)) {
-                    verificarNodoLlegada(nodoActual, BtnDerecha.getText());
-                }
-            }
-        }
-
-    }
-
-    public static boolean esHoja(Nodo nodo) {
-        return nodo.izq == null && nodo.der == null;
-
-    }
-
-    private void verificarNodoLlegada(Nodo nodo, String direccion) {
-        if (nodo.llegada) {
-
-        } else {
-
-            nodoActual = encontrarPadre(raiz, nodo);
-            jLabel2.setText(Integer.toString((Altura - nodoActual.alturaArbol(nodoActual)) + 1) + ", " + direccion);
-            actualizarImagenFondo();
-            plantilla.setText(Integer.toString(nodoActual.nombre));
-            BtnIzquierda.setVisible(false);
-            BtnDerecha.setVisible(false);
-            BtnAcertijo.setVisible(true);
-            arbol.imprimirArbol();
-            JOptionPane.showMessageDialog(null, "¡Te moriste! Regresando al nodo anterior...");
-        }
-    }
-
-    private Nodo encontrarPadre(Nodo raiz, Nodo nodo) {
-        if (raiz == null || nodo == null) {
-            return null;
-        }
-
-        if (raiz.izq == nodo || raiz.der == nodo) {
-            return raiz;
-        }
-
-        Nodo left = encontrarPadre(raiz.izq, nodo);
-        if (left != null) {
-            return left;
-        }
-
-        return encontrarPadre(raiz.der, nodo);
-    }
+   
 
     /**
      * @param args the command line arguments
@@ -411,9 +512,11 @@ public class Juego extends javax.swing.JFrame {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAcertijo;
     private javax.swing.JButton BtnDerecha;
+    private javax.swing.JButton BtnFin;
     private javax.swing.JButton BtnIzquierda;
     private javax.swing.JButton BtnOpcion1;
     private javax.swing.JButton BtnOpcion2;
