@@ -22,7 +22,7 @@ public class Arbolinho {
 
     public Nodo raiz;
 
-    static ArrayList<List> recorrido = new ArrayList<>();
+    public static ArrayList<List> recorrido = new ArrayList<>();
 
     public Arbolinho() {
         this.raiz = null;
@@ -60,7 +60,7 @@ public class Arbolinho {
             String imagen1 = partes[1];
             String imagen2 = partes[2];
             String imagen3 = partes[3];
-            boolean llegada = partes.length > 4 && Boolean.parseBoolean(partes[4]); 
+            boolean llegada = partes.length > 4 && Boolean.parseBoolean(partes[4]);
 
             Nodo nuevoNodo = new Nodo(nombre, imagen1, imagen2, imagen3, llegada, null, null);
 
