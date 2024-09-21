@@ -40,6 +40,7 @@ public class Pantalla2_INSTRUCCIONES extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Bt_izq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Flecha_izq.png"))); // NOI18N
         Bt_izq.setToolTipText("");
         Bt_izq.setBorderPainted(false);
         Bt_izq.setContentAreaFilled(false);
@@ -48,7 +49,7 @@ public class Pantalla2_INSTRUCCIONES extends javax.swing.JFrame {
                 Bt_izqActionPerformed(evt);
             }
         });
-        getContentPane().add(Bt_izq, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 640, 80, 90));
+        getContentPane().add(Bt_izq, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 620, 130, 110));
 
         Bt_estudiando.setBorderPainted(false);
         Bt_estudiando.setContentAreaFilled(false);
@@ -77,6 +78,7 @@ public class Pantalla2_INSTRUCCIONES extends javax.swing.JFrame {
         });
         getContentPane().add(Bt_reciclando, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 190, 50));
 
+        Bt_der.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Flecha_der.png"))); // NOI18N
         Bt_der.setBorder(null);
         Bt_der.setBorderPainted(false);
         Bt_der.setContentAreaFilled(false);
@@ -85,11 +87,11 @@ public class Pantalla2_INSTRUCCIONES extends javax.swing.JFrame {
                 Bt_derActionPerformed(evt);
             }
         });
-        getContentPane().add(Bt_der, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 630, 80, 100));
+        getContentPane().add(Bt_der, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 630, 110, 100));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxtr\\OneDrive\\Documentos\\GitHub\\LAB_EDD2\\src\\IMAGENES\\Instrucciones.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/Instrucciones.png"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 800));
@@ -124,9 +126,9 @@ public class Pantalla2_INSTRUCCIONES extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Bt_barriendoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
