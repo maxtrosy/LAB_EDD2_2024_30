@@ -62,7 +62,7 @@ public class Juego extends javax.swing.JFrame {
             File fontStyle = new File("src\\Fuente\\league-spartan\\LeagueSpartan-Bold.otf");
 
             Font fontAcertijo = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(40f);
-            Font fontOpciones = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(20f);
+            Font fontOpciones = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(25f);
             TxtAcertijo.setFont((fontAcertijo));
             BtnOpcion1.setFont((fontOpciones));
             BtnOpcion2.setFont((fontOpciones));
@@ -89,6 +89,8 @@ public class Juego extends javax.swing.JFrame {
         BtnOpcion3.setVisible(false);
         BtnIzquierda.setVisible(false);
         BtnDerecha.setVisible(false);
+        BtnDerecha.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\flecha_der.png"));
+        BtnIzquierda.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\flecha_izq.png"));
     }
 
     private void cargarDatasetImagenes() {
@@ -348,47 +350,57 @@ public class Juego extends javax.swing.JFrame {
 
         TxtAcertijo.setText("jLabel2");
         TxtAcertijo.setToolTipText("");
-        getContentPane().add(TxtAcertijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 1150, 70));
+        getContentPane().add(TxtAcertijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 790, 70));
 
         BtnOpcion1.setText("jButton1");
+        BtnOpcion1.setContentAreaFilled(false);
+        BtnOpcion1.setDefaultCapable(false);
         BtnOpcion1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnOpcion1ActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnOpcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 630, -1, -1));
+        getContentPane().add(BtnOpcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 463, 320, 100));
 
         BtnOpcion2.setText("jButton1");
+        BtnOpcion2.setBorderPainted(false);
+        BtnOpcion2.setContentAreaFilled(false);
         BtnOpcion2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnOpcion2ActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnOpcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 630, -1, -1));
+        getContentPane().add(BtnOpcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 470, 320, 80));
 
         BtnOpcion3.setText("jButton1");
+        BtnOpcion3.setBorderPainted(false);
+        BtnOpcion3.setContentAreaFilled(false);
         BtnOpcion3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnOpcion3ActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnOpcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 630, -1, -1));
+        getContentPane().add(BtnOpcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, 320, 80));
 
-        BtnIzquierda.setText("Izquierda");
+        BtnIzquierda.setText("izq");
+        BtnIzquierda.setBorderPainted(false);
+        BtnIzquierda.setContentAreaFilled(false);
         BtnIzquierda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnIzquierdaActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 620, -1, -1));
+        getContentPane().add(BtnIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 630, 150, 40));
 
-        BtnDerecha.setText("Derecha");
+        BtnDerecha.setText("der");
+        BtnDerecha.setBorderPainted(false);
+        BtnDerecha.setContentAreaFilled(false);
         BtnDerecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnDerechaActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 620, -1, -1));
+        getContentPane().add(BtnDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1002, 640, 150, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("jLabel2");
@@ -396,7 +408,7 @@ public class Juego extends javax.swing.JFrame {
 
         plantilla.setText("jLabel2");
         getContentPane().add(plantilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1230, 800));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
