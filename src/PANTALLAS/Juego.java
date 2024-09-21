@@ -72,6 +72,8 @@ public class Juego extends javax.swing.JFrame {
         plantilla.setText(Integer.toString(nodoActual.nombre));
         jLabel2.setText(Integer.toString(1) + ", Raíz");
 
+        arbol.guardarAventura("Raíz", nodoActual);
+
         TxtAcertijo.setVisible(false);
         BtnOpcion1.setVisible(false);
         BtnOpcion2.setVisible(false);
@@ -278,7 +280,7 @@ public class Juego extends javax.swing.JFrame {
         // TODO add your handling code here:
         avanceHistoria(nodoActual, BtnIzquierda.getText());
         jLabel2.setText(Integer.toString(Altura - nodoActual.alturaArbol(nodoActual)) + ", " + BtnIzquierda.getText());
-        arbol.guardarAventura(BtnIzquierda.getText(), nodoActual);
+
         System.out.println(arbol.recorrido);
     }//GEN-LAST:event_BtnIzquierdaActionPerformed
 
@@ -286,7 +288,7 @@ public class Juego extends javax.swing.JFrame {
         // TODO add your handling code here:
         avanceHistoria(nodoActual, BtnDerecha.getText());
         jLabel2.setText(Integer.toString(Altura - nodoActual.alturaArbol(nodoActual)) + ", " + BtnDerecha.getText());
-        arbol.guardarAventura(BtnDerecha.getText(), nodoActual);
+
         System.out.println(arbol.recorrido);
     }//GEN-LAST:event_BtnDerechaActionPerformed
 
@@ -309,6 +311,7 @@ public class Juego extends javax.swing.JFrame {
                 verificarNodoLlegada(nodoActual, BtnIzquierda.getText());
             } else {
                 nodoActual = nodoActual.izq;
+                arbol.guardarAventura(BtnIzquierda.getText(), nodoActual);
                 plantilla.setText(Integer.toString(nodoActual.nombre));
                 BtnIzquierda.setVisible(false);
                 BtnDerecha.setVisible(false);
@@ -324,6 +327,7 @@ public class Juego extends javax.swing.JFrame {
                 verificarNodoLlegada(nodoActual, BtnDerecha.getText());
             } else {
                 nodoActual = nodoActual.der;
+                arbol.guardarAventura(BtnDerecha.getText(), nodoActual);
                 plantilla.setText(Integer.toString(nodoActual.nombre));
                 BtnIzquierda.setVisible(false);
                 BtnDerecha.setVisible(false);
@@ -348,6 +352,7 @@ public class Juego extends javax.swing.JFrame {
         } else {
 
             nodoActual = encontrarPadre(raiz, nodo);
+            arbol.guardarAventura(direccion, nodoActual);
             jLabel2.setText(Integer.toString((Altura - nodoActual.alturaArbol(nodoActual)) + 1) + ", " + direccion);
             actualizarImagenFondo();
             plantilla.setText(Integer.toString(nodoActual.nombre));

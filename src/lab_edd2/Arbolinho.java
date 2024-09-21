@@ -172,14 +172,10 @@ public class Arbolinho {
 
     public static void guardarAventura(String entrada, Nodo nodo) {
 
-        if (Juego.esHoja(nodo)) {
-
-        } else {
-            List<String> aventura = new ArrayList<String>();
-            aventura.add(Integer.toString(nodo.nombre));
-            aventura.add(entrada);
-            recorrido.add(aventura);
-        }
+        List<String> aventura = new ArrayList<String>();
+        aventura.add(Integer.toString(nodo.nombre));
+        aventura.add(entrada);
+        recorrido.add(aventura);
 
     }
 
@@ -199,6 +195,14 @@ public class Arbolinho {
 
             }
         }
+    }
+
+    public static void recorridoPostMortem(ArrayList<List> recorrido) {
+
+        for (List list : recorrido) {
+            
+        }
+
     }
 
 }
