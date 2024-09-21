@@ -86,6 +86,27 @@ public class Arbolinho {
         }
     }
 
+    public void agregarCurioso(Nodo nodo, Nodo nuevoNodo, String direccion) {
+
+        if (direccion.equalsIgnoreCase("izquierda")) {
+            if (nodo.izq == null) {
+                nodo.izq = nuevoNodo;
+            } else {
+                agregarCurioso(nodo.izq, nuevoNodo, direccion);
+            }
+
+        } else {
+            if (direccion.equalsIgnoreCase("derecha")) {
+                if (nodo.der == null) {
+                    nodo.der = nuevoNodo;
+                } else {
+                    agregarCurioso(nodo.izq, nuevoNodo, direccion);
+                }
+            }
+        }
+
+    }
+
     public static int alturaArbol(Nodo n1) {
         if (n1 == null) {
             return 0;
@@ -112,9 +133,9 @@ public class Arbolinho {
         List<Nodo> nuevosNodos = new ArrayList<>();  // Crea una nueva lista para los nodos de la siguiente línea
         for (Nodo nodo : nodos) {  // Itera sobre los nodos actuales
             if (nodo != null) {  // Si el nodo no es null
-                System.out.print(nodo.nombre);  // Imprime el dato del nodo
+                System.out.print("O");  // Imprime el dato del nodo
                 nuevosNodos.add(nodo.izq);  // Agrega el hijo izquierda a la lista de nuevos nodos
-                nuevosNodos.add(nodo.der);  // Agrega el hijo derecho a la lista de nuevos nodos
+                nuevosNodos.add(nodo.der);  // Agrega el hijo der a la lista de nuevos nodos
             } else {  // Si el nodo es null
                 nuevosNodos.add(null);  // Agrega null para mantener la estructura
                 nuevosNodos.add(null);  // Agrega null para mantener la estructura
@@ -172,10 +193,20 @@ public class Arbolinho {
 
     public static void guardarAventura(String entrada, Nodo nodo) {
 
+        boolean Add = true;
         List<String> aventura = new ArrayList<String>();
         aventura.add(Integer.toString(nodo.nombre));
         aventura.add(entrada);
-        recorrido.add(aventura);
+        for (int i = 0; i < recorrido.size(); i++) {
+            if (entrada == recorrido.get(i).get(1)) {
+                if (Integer.toString(nodo.nombre).equals(recorrido.get(i).get(0))) {
+                    Add = false;
+                }
+            }
+        }
+        if (Add == true) {
+            recorrido.add(aventura);
+        }
 
     }
 
@@ -199,9 +230,36 @@ public class Arbolinho {
 
     public static void recorridoPostMortem(ArrayList<List> recorrido) {
 
+        Arbolinho arbolPlantilla = new Arbolinho();
+
+        Nodo nodo = new Nodo(30);
+
+        arbolPlantilla.raiz = null;
+
         for (List list : recorrido) {
-            
+            int nombrePlantilla = Integer.parseInt((String) list.get(0));
+            Nodo nodoPlantilla = new Nodo(nombrePlantilla);
+            arbolPlantilla.raiz = nodo;
         }
+
+        arbolPlantilla.imprimirArbol();
+
+    }
+
+    public static void recorridoMuerte(ArrayList<List> recorrido) {
+
+        Arbolinho arbolPlantilla = new Arbolinho();
+        Nodo guardadoNodo = new Nodo(30);
+        arbolPlantilla.raiz = guardadoNodo;
+
+        for (List list : recorrido) {
+            int nombrePlantilla = Integer.parseInt((String) list.get(0));
+            String direccionPlantilla = (String) list.get(1);
+            Nodo plantillaNodo = new Nodo(nombrePlantilla);
+            arbolPlantilla.agregarCurioso(arbolPlantilla.raiz, plantillaNodo, direccionPlantilla);
+
+        }
+        arbolPlantilla.imprimirArbol();
 
     }
 

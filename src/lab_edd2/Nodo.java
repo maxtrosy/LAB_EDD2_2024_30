@@ -38,6 +38,18 @@ public class Nodo {
         this.der = der;
     }
 
+    public Nodo(int nombre) {
+        this.nombre = nombre;
+        this.izq = null;
+        this.der = null;
+    }
+
+    public Nodo() {
+        this.nombre = 0;
+        this.izq = null;
+        this.der = null;
+    }
+
     public static int alturaArbol(Nodo n1) {
         if (n1 == null) {
             return 0;

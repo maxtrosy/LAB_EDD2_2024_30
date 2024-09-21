@@ -352,15 +352,17 @@ public class Juego extends javax.swing.JFrame {
         } else {
 
             nodoActual = encontrarPadre(raiz, nodo);
-            arbol.guardarAventura(direccion, nodoActual);
+
             jLabel2.setText(Integer.toString((Altura - nodoActual.alturaArbol(nodoActual)) + 1) + ", " + direccion);
             actualizarImagenFondo();
             plantilla.setText(Integer.toString(nodoActual.nombre));
             BtnIzquierda.setVisible(false);
             BtnDerecha.setVisible(false);
             BtnAcertijo.setVisible(true);
-            arbol.imprimirArbol();
+            //arbol.imprimirArbol();
+
             JOptionPane.showMessageDialog(null, "¡Te moriste! Regresando al nodo anterior...");
+            arbol.recorridoMuerte(arbol.recorrido);
         }
     }
 
