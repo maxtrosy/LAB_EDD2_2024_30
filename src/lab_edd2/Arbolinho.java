@@ -4,6 +4,7 @@
  */
 package lab_edd2;
 
+import PANTALLAS.Juego;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,7 +23,7 @@ public class Arbolinho {
 
     public Nodo raiz;
 
-    static ArrayList<List> recorrido = new ArrayList<>();
+    public static ArrayList<List> recorrido = new ArrayList<>();
 
     public Arbolinho() {
         this.raiz = null;
@@ -60,7 +61,7 @@ public class Arbolinho {
             String imagen1 = partes[1];
             String imagen2 = partes[2];
             String imagen3 = partes[3];
-            boolean llegada = partes.length > 4 && Boolean.parseBoolean(partes[4]); 
+            boolean llegada = partes.length > 4 && Boolean.parseBoolean(partes[4]);
 
             Nodo nuevoNodo = new Nodo(nombre, imagen1, imagen2, imagen3, llegada, null, null);
 
@@ -169,11 +170,17 @@ public class Arbolinho {
         }
     }
 
-    public void guardarAventura(String entrada, Nodo nodo) {
-        List aventura = new ArrayList<Object>();
-        aventura.add(nodo);
-        aventura.add(entrada);
-        recorrido.add(aventura);
+    public static void guardarAventura(String entrada, Nodo nodo) {
+
+        if (Juego.esHoja(nodo)) {
+
+        } else {
+            List<String> aventura = new ArrayList<String>();
+            aventura.add(Integer.toString(nodo.nombre));
+            aventura.add(entrada);
+            recorrido.add(aventura);
+        }
+
     }
 
     public void avanceHistoria(Nodo nodo, String direccion) {

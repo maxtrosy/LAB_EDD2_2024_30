@@ -40,7 +40,7 @@ public class Juego extends javax.swing.JFrame {
     public Juego() {
         initComponents();
         jLabel1.revalidate();
-            jLabel1.repaint();
+        jLabel1.repaint();
         setLocationRelativeTo(null);
         setLocationRelativeTo(null);
         transparenciaButton();
@@ -98,9 +98,9 @@ public class Juego extends javax.swing.JFrame {
             if (BtnAcertijo.isVisible()) {
                 jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen1));
             } else if (TxtAcertijo.isVisible()) {
-                 jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen2));
+                jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen2));
             } else if (BtnIzquierda.isVisible() && BtnDerecha.isVisible()) {
-                 jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen3));
+                jLabel1.setIcon(new ImageIcon("src\\Resources\\ImagenesJuego\\" + imagen3));
             }
 
             jLabel1.revalidate();
@@ -319,18 +319,17 @@ public class Juego extends javax.swing.JFrame {
                 }
             }
         }
-        
+
     }
 
-    private boolean esHoja(Nodo nodo) {
+    public static boolean esHoja(Nodo nodo) {
         return nodo.izq == null && nodo.der == null;
-        
+
     }
 
     private void verificarNodoLlegada(Nodo nodo) {
         if (nodo.llegada) {
 
-            
         } else {
             JOptionPane.showMessageDialog(null, "¡Te moriste! Regresando al nodo anterior...");
             nodoActual = encontrarPadre(raiz, nodo);
@@ -356,7 +355,6 @@ public class Juego extends javax.swing.JFrame {
             return left;
         }
 
-        
         return encontrarPadre(raiz.der, nodo);
     }
 
