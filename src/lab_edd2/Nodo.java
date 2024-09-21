@@ -18,7 +18,6 @@ public class Nodo {
     public Nodo izq;
     public Nodo der;
 
-
     public Nodo(int nombre, String imagen1, String imagen2, String imagen3, Nodo izq, Nodo der) {
         this.nombre = nombre;
         this.imagen1 = imagen1;
@@ -39,6 +38,11 @@ public class Nodo {
         this.der = der;
     }
 
-    
-    
+    public static int alturaArbol(Nodo n1) {
+        if (n1 == null) {
+            return 0;
+        }
+        return Math.max(alturaArbol(n1.izq), alturaArbol(n1.der)) + 1;
+    }
+
 }
