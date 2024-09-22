@@ -54,7 +54,7 @@ public class Pantalla4_IMG8 extends javax.swing.JFrame {
         });
         getContentPane().add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 570, 330, 90));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\alejo\\OneDrive\\Documentos\\GitHub\\LAB_EDD2\\src\\IMAGENES\\8.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxtr\\OneDrive\\Documentos\\GitHub\\LAB_EDD2_2024_30\\src\\IMAGENES\\8.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

@@ -69,7 +69,7 @@ public class Pantalla1_JUGAR extends javax.swing.JFrame {
         });
         getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 610, 350, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxtr\\OneDrive\\Documentos\\GitHub\\LAB_EDD2\\src\\IMAGENES\\JUGAR.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxtr\\OneDrive\\Documentos\\GitHub\\LAB_EDD2_2024_30\\src\\IMAGENES\\JUGAR.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

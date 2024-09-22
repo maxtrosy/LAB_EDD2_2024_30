@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class Arbolinho {
 
-    public Nodo raiz;
+   public Nodo raiz;
 
     public static ArrayList<List> recorrido = new ArrayList<>();
 
@@ -174,28 +174,6 @@ public class Arbolinho {
         }
 
         imprimirNodos(nuevosNodos, nivel + 1, maxLevel);  // Llama recursivamente para imprimir el siguiente nivel de nodos
-    }
-
-    public void imprimirArbolVertical(Nodo nodo, int nivel) {
-        if (nodo == null) {
-            return;
-        }
-
-        // Imprimir el subárbol derecho primero
-        imprimirArbolVertical(nodo.der, nivel + 1);
-
-        // Imprimir el nodo actual con espacios
-        if (nivel > 0) {
-            for (int i = 0; i < nivel - 1; i++) {
-                System.out.print("|\t");
-            }
-            System.out.print("|-------" + nodo.nombre + "\n");
-        } else {
-            System.out.print(nodo.nombre + "\n");
-        }
-
-        // Imprimir el subárbol izquierdo
-        imprimirArbolVertical(nodo.izq, nivel + 1);
     }
 
     private boolean sonTodosNulos(List<Nodo> nodos) {  // Verifica si todos los nodos en una lista son null

@@ -1,4 +1,5 @@
 package PANTALLAS;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -8,10 +9,13 @@ import javax.swing.JFrame;
  */
 public class Pop_up extends javax.swing.JFrame {
 
+    Juego juego;
     private Label_pop imageLabel;
 
     public Pop_up(String imagePath) {
         initComponents();
+
+        this.juego = juego;
         setLocationRelativeTo(null); // Centra el pop-up
         Label_pop.setIcon(new ImageIcon(imagePath)); // Cambia la imagen del JLabel
         setVisible(true);
@@ -30,29 +34,31 @@ public class Pop_up extends javax.swing.JFrame {
         Label_pop = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(380, 290));
-        setMinimumSize(new java.awt.Dimension(380, 290));
+        setMaximumSize(new java.awt.Dimension(390, 280));
+        setMinimumSize(new java.awt.Dimension(390, 280));
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(390, 280));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("OKA");
+        jButton1.setText("OKAY");
+        jButton1.setBorderPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, -1, -1));
 
         Label_pop.setText("MIMIMIMIM");
-        getContentPane().add(Label_pop, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 260));
+        getContentPane().add(Label_pop, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 280));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       this.dispose();
+       
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -81,7 +87,7 @@ public class Pop_up extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                 new Pop_up("src/imagenes/SI.png").setVisible(true);
+                new Pop_up("src/imagenes/SI.png").setVisible(true);
             }
         });
     }

@@ -38,6 +38,7 @@ public class Pantalla2_INSTRUCCIONES extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Bt_izq.setToolTipText("");
@@ -89,7 +90,7 @@ public class Pantalla2_INSTRUCCIONES extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxtr\\OneDrive\\Documentos\\GitHub\\LAB_EDD2\\src\\IMAGENES\\Instrucciones.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxtr\\OneDrive\\Documentos\\GitHub\\LAB_EDD2_2024_30\\src\\Resources\\ImagenesJuego\\3.png")); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 800));
@@ -102,25 +103,25 @@ public class Pantalla2_INSTRUCCIONES extends javax.swing.JFrame {
             this.setVisible(false);
             frameMENU.setVisible(true);
         } else {
-            new Pop_up("src/imagenes/NO.png");
+            new Pop_up("src\\Resources\\PopUps\\4.png");
         }
     }//GEN-LAST:event_Bt_derActionPerformed
 
     private void Bt_estudiandoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_estudiandoActionPerformed
-            new Pop_up("src/imagenes/NO.png");
+            new Pop_up("src\\Resources\\PopUps\\no.png");
     }//GEN-LAST:event_Bt_estudiandoActionPerformed
 
     private void Bt_izqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_izqActionPerformed
-        new Pop_up("src/imagenes/NO.png");  
+        new Pop_up("src\\Resources\\PopUps\\1.png");  
     }//GEN-LAST:event_Bt_izqActionPerformed
 
     private void Bt_reciclandoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_reciclandoActionPerformed
         recicla = true;
-        new Pop_up("src/imagenes/SI.png");
+        new Pop_up("src\\Resources\\PopUps\\2.png");
     }//GEN-LAST:event_Bt_reciclandoActionPerformed
 
     private void Bt_barriendoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_barriendoActionPerformed
-        new Pop_up("src/imagenes/NO.png");
+        new Pop_up("src\\Resources\\PopUps\\2.png");
 
     }//GEN-LAST:event_Bt_barriendoActionPerformed
 
